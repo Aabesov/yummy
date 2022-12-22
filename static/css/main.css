@@ -84,8 +84,8 @@ section {
 }
 
 .section-header p {
-  margin: 0;
-  font-size: 48px;
+  margin: 10;
+  font-size: 8px;
   font-weight: 400;
   font-family: var(--font-primary);
 }
@@ -93,6 +93,8 @@ section {
 .section-header p span {
   color: var(--color-primary);
 }
+
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
