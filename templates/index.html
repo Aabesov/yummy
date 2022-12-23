@@ -78,6 +78,12 @@
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'register'%}">Sign Up</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout'%}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login'%}">Login</a></li>
+                {%endif%}
             </ul>
         </nav><!-- .navbar -->
 
@@ -268,6 +274,7 @@
     </section><!-- End Stats Counter Section -->
 
     <!-- ======= Menu Section ======= -->
+    {% if user.is_authenticated %}
     <section id="menu" class="menu">
         <div class="container" data-aos="fade-up">
 
@@ -469,9 +476,21 @@
                 </div><!-- End Dinner Menu Content -->
 
             </div>
-
         </div>
     </section><!-- End Menu Section -->
+    {%else%}
+    <section id="menu" class="menu">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Наше меню</h2>
+                <p>Что бы посмотреть меню <span>Вам Нужно Войти</span></p>
+            </div>
+
+    </section><!-- End Menu Section -->
+    {%endif%}
+
+
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
